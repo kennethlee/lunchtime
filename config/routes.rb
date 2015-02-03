@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
   resources :suggestions
-
-  # get 'suggestions/new'
-  # get 'suggestions/show'
-  # get 'suggestions/index'
+  devise_for :users, path: "auth", path_names: { sign_in: 'login' }
 
   root 'suggestions#index'
 
