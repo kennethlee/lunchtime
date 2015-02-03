@@ -11,7 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'therubyracer'
 gem 'acts_as_votable', '~>0.10.0'
-# gem 'devise'
+gem 'devise'
 # gem 'omniauth'
 
 group :development, :test do
