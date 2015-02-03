@@ -4,8 +4,7 @@
       <%= form_for(@suggestion) do |s| %>
         <%= s.text_field :name, class: 'form-control', placeholder: 'Restaurant name' %><br />
         <!--Current user's ID must be passed in via the form-->
-        <!--ENABLE ONCE USER MODEL IS UP-->
-        <%# <%= s.hidden_field :user_id, :value => current_user.id %1> %>
+        <%= s.hidden_field :user_id, :value => current_user.id %>
         <%# <%= s.hidden_field :user_name, :value => current_user.name %1> %>
         <%= s.submit %>
       <% end %>
