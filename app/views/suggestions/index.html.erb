@@ -1,2 +1,31 @@
-<h1>Suggestions#index</h1>
-<p>Find me in app/views/suggestions/index.html.erb</p>
+<div class="col-md-10 col-md-offset-1">
+  <table class="table table-hover table-responsive">
+    <thead>
+      <div class="center">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h3>Suggest or vote on a restaurant:</h3>
+          </div>
+        </div>
+      </div>
+      <tr>
+        <th>Restaurant</th>
+        <th>Suggested by</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= link_to "Suggest new", new_suggestion_path, class: "btn btn-large btn-info" %>
+      <% @suggestions.each do |s| %>
+        <tr>
+          <td><h4><%= link_to s.name, suggestion_path(s) %></h4></td>
+          <td><%= s.user_id %></td>
+          <!--use an if/else statement here to present 'unvote' button if user has
+          already voted on a particular suggestioni-->
+          <td><%= link_to "Vote up", '#', class: "btn btn-large btn-default" %></td>
+          <td><%= link_to "Unvote", '#', class: "btn btn-large btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

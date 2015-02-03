@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'suggestions/new'
+  resources :suggestions
 
-  get 'suggestions/show'
-
-  get 'suggestions/index'
+  # get 'suggestions/new'
+  # get 'suggestions/show'
+  # get 'suggestions/index'
 
   root 'suggestions#index'
 

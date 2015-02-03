@@ -1,2 +1,13 @@
-<h1>Suggestions#new</h1>
-<p>Find me in app/views/suggestions/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@suggestion) do |s| %>
+        <%= s.text_field :name, class: 'form-control', placeholder: 'Restaurant name' %><br />
+        <!--Current user's ID must be passed in via the form-->
+        <%= s.hidden_field :user_id, :value => current_user.id %>
+        <%# <%= s.hidden_field :user_name, :value => current_user.name %1> %>
+        <%= s.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
