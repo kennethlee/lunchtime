@@ -19,7 +19,7 @@
       <% @suggestions.each do |s| %>
         <tr>
           <td><h4><%= link_to s.name, suggestion_path(s) %></h4></td>
-          <td><%= s.user_id %></td>
+          <%# <td><%= s.user_id %1></td> %>
           <!--use an if/else statement here to present 'unvote' button if user has
           already voted on a particular suggestioni-->
           <td><%= link_to "Vote up", '#', class: "btn btn-large btn-default" %></td>
