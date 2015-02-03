@@ -1,0 +1,20 @@
+<div>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" <%= link_to "What's For Lunch?", new_user_session_path, :method => :get %></a>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <%# <li><a href="#">Sign out</a></li> %>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path, :method => :get %></li>
+            <li><%= link_to "Forgot password?", new_user_password_path, :method => :get %></li>
+          <% end %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</div>
