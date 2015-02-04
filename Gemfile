@@ -12,6 +12,7 @@ gem 'bootstrap-sass'
 gem 'therubyracer'
 gem 'acts_as_votable', '~>0.10.0'
 gem 'devise'
+gem 'figaro'
 # gem 'omniauth'
 
 group :development, :test do
