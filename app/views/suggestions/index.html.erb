@@ -23,8 +23,11 @@
           <td><h4><%= link_to s.name, suggestion_path(s) %></h4></td>
           <%# <td><%= s.user_id %1></td> %>
           <td><%= s.votes_for.size %></td>
-          <td><%= link_to "↑", like_suggestion_path(s), method: :put, class: "btn btn-large btn-default" %></td>
-          <td><%= link_to "↓", dislike_suggestion_path(s), method: :put, class: "btn btn-large btn-danger" %></td>
+          <% if current_user.voted_for? s %>
+            <td><%= link_to "Unvote", dislike_suggestion_path(s), method: :put, class: "btn btn-large btn-danger" %></td>
+          <% else %>
+            <td><%= link_to "Upvote", like_suggestion_path(s), method: :put, class: "btn btn-large btn-primary" %></td>
+        <% end %>
         </tr>
       <% end %>
     </tbody>
