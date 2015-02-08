@@ -18,7 +18,7 @@
 
     <tbody>
       <%= link_to "Suggest new", new_suggestion_path, class: "btn btn-large btn-info" %>
-      <% @suggestions.each do |s| %>
+      <% @suggestions.sort { |a, b| b.votes_for.size <=> a.votes_for.size}.each do |s| %>
         <tr>
           <td><h4><%= link_to s.name, suggestion_path(s) %></h4></td>
           <%# <td><%= s.user_id %1></td> %>
