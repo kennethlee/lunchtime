@@ -12,13 +12,14 @@ class SuggestionsController < ApplicationController
   def create
     @suggestion = Suggestion.new(suggestion_params)
     if @suggestion.save
-    redirect_to suggestions_path
+      redirect_to suggestions_path
     else
-    render 'new'
+      render 'new'
     end
   end
 
   def show
+    @suggestion = Suggestion.find(params[:id])
   end
 
   # Destroys a submitted suggestion
