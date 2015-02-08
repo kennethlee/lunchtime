@@ -10,7 +10,9 @@
       </div>
       <tr>
         <th>Restaurant</th>
-        <th>Suggested by</th>
+        <%# <th>Suggested by</th> %>
+        <th>Number of Votes</th>
+        <th>Action</th>
       </tr>
     </thead>
 
@@ -19,11 +21,10 @@
       <% @suggestions.each do |s| %>
         <tr>
           <td><h4><%= link_to s.name, suggestion_path(s) %></h4></td>
-          <td><%= s.user_id %></td>
-          <!--use an if/else statement here to present 'unvote' button if user has
-          already voted on a particular suggestioni-->
-          <td><%= link_to "Vote up", '#', class: "btn btn-large btn-default" %></td>
-          <td><%= link_to "Unvote", '#', class: "btn btn-large btn-danger" %></td>
+          <%# <td><%= s.user_id %1></td> %>
+          <td><%= s.votes_for.size %></td>
+          <td><%= link_to "↑", like_suggestion_path(s), method: :put, class: "btn btn-large btn-default" %></td>
+          <td><%= link_to "↓", dislike_suggestion_path(s), method: :put, class: "btn btn-large btn-danger" %></td>
         </tr>
       <% end %>
     </tbody>

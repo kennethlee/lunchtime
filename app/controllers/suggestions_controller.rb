@@ -28,6 +28,18 @@ class SuggestionsController < ApplicationController
     redirect_to root_url
   end
 
+  def upvote
+    @suggestion = Suggestion.find(params[:id])
+    @suggestion.liked_by current_user
+    redirect_to suggestions_path
+  end
+
+  def unvote
+    @suggestion = Suggestion.find(params[:id])
+    @suggestion.unliked_by current_user
+    redirect_to suggestions_path
+  end
+
   private
 
     def suggestion_params

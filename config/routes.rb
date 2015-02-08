@@ -4,6 +4,13 @@ Rails.application.routes.draw do
 
   root 'suggestions#index'
 
+  resources :suggestions do
+    member do
+      put 'like', to: "suggestions#upvote"
+      put 'dislike', to: "suggestions#unvote"
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
