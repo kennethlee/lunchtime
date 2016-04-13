@@ -7,3 +7,7 @@ A practice rails app I made so that my coworkers and I can suggest and vote on w
 Inspired by our indecisiveness.
 
 [Check it out](https://vote-for-lunch.herokuapp.com) on Heroku.
+
+<div align="center">
+  <a href="https://vote-for-lunch.herokuapp.com"><img src="http://i.imgur.com/wC2tKBT.png" /></a>
+</div>
